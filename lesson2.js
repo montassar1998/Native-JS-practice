@@ -26,10 +26,10 @@ jQuery.fn.new_string_of_line = function (caller_id) {
         });
         // on a mis " "+ch au lieu de ch+ " " car elle causera un défault dans la taille d'elle méme à chaque fois i,e: chaine vide 
         for (let i = 0; i < ch.length; i++) {
-            if(ch[i]!=""){
-                ret_val += " "+ch[i];
+            if (ch[i] != "") {
+                ret_val += " " + ch[i];
             }
-            
+
         }
         console.log("ret val " + ret_val);
 

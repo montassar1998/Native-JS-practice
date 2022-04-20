@@ -158,7 +158,7 @@ function showAlert(new_val) {
 //****************************************************************************************** */
 
 ticket = 1;
-const course = function (name, level, voteCount,id) {
+const course = function (name, level, voteCount, id) {
     this.name = name;
     this.level = level;
     this.voteCount = voteCount;
@@ -174,7 +174,7 @@ new_course_add.onclick = function click() {
     new_course_diff = document.getElementById('level_c').value;
     new_course_like = document.getElementById('init_nb_likes_c').value;
     new_course_id = ticket;
-    data = new course(new_course_name, new_course_diff, new_course_like,ticket);
+    data = new course(new_course_name, new_course_diff, new_course_like, ticket);
     if ([new_course_name, new_course_diff, new_course_like].some(e => e == '') || isNaN(new_course_like)) {
         alert("Saisissez des données valides");
         return;
@@ -186,15 +186,15 @@ new_course_add.onclick = function click() {
 function insertIntoArrC(data) {
     // console.log("verif");
     // console.log(arr_course);
-    flag =false;
+    flag = false;
     Object.keys(arr_course).forEach(key => {
         // console.log(arr_course[key].name);
         // console.log(data.name);
         if (arr_course[key].name === data.name) {
-            flag=true;
-        } 
+            flag = true;
+        }
     });
-  
+
     // console.log("flag = "+flag);
     if (!flag) {
         arr_course.push(data);
@@ -208,20 +208,19 @@ function insert_new_data(data) {
     var li = document.createElement("li");
     li.innerHTML = "";
     Object.keys(data).forEach(key => {
-         
-        if (key!='id')
+
+        if (key != 'id')
             li.innerHTML += data[key] + " ";
     });
-
     li.innerHTML += `<button class='likes' id=` + parseInt(ticket) + `>j'\aime</button>`;
-    
+
     li.innerHTML += "</li>";
     if (!insertIntoArrC(data)) {
         var node = document.querySelector('#mat_list')
         node.append(li);
         ticket++;
     }
-    
+
 
     return;
 }
