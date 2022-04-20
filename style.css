@@ -1,0 +1,9 @@
+#mat_list li{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+button{
+    width:120px;
+    align-self: center;
+}
